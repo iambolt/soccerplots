@@ -212,7 +212,34 @@ class Radar:
         if title.get('subtitle_name_2'):
             ## plot the second subtitle name
             ax.text(22, 22, title['subtitle_name_2'], fontsize=title['subtitle_fontsize_2'], 
-                    fontdict={'color': title['subtitle_color_2']}, ha='right', fontfamily=self.fontfamily) 
+                    fontdict={'color': title['subtitle_color_2']}, ha='right', fontfamily=self.fontfamily)
+            
+        if title.get('title_fontsize_3') == None:
+            ## add title fontsize 2
+            title['title_fontsize_3'] = title['title_fontsize']
+
+        if title.get('subtitle_fontsize_3') == None:
+            ## add subtitle fontsize 2
+            title['subtitle_fontsize_3'] = title['subtitle_fontsize']   
+            
+         if title.get('title_color_3') == None:
+            ## add title color
+            title['title_color_3'] = '#000000'
+
+        if title.get('subtitle_color_3') == None:
+            ## add a subtitle color
+            title['subtitle_color'_3] = '#000000
+            
+        if title.get('title_name_3'):
+            ## plot the second title name
+            ax.text(16, 30, title['title_name_3'], fontsize=title['title_fontsize_3'], fontweight='bold', 
+                    fontdict={'color': title['title_color_3']}, ha='right', fontfamily=self.fontfamily)
+        
+        if title.get('subtitle_name_3'):
+            ## plot the second subtitle name
+            ax.text(16, 30, title['subtitle_name_3'], fontsize=title['subtitle_fontsize_3'], 
+                    fontdict={'color': title['subtitle_color_3']}, ha='right', fontfamily=self.fontfamily) 
+
         
         return ax
 
